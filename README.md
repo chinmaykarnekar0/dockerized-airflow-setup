@@ -176,67 +176,19 @@ cd dockerized-airflow-setup
 
 ---
 
-## 2. Create Virtual Environment
+## 2. Run Automated Local Setup
 
 ```bash
-python -m venv venv
+python scripts/start_local_env.py
 ```
 
----
+The automation script performs:
 
-## 3. Activate Virtual Environment
-
-### Windows PowerShell
-
-```powershell
-.\venv\Scripts\Activate.ps1
-```
-
-### Windows CMD
-
-```cmd
-venv\Scripts\activate.bat
-```
-
----
-
-## 4. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-# Run Airflow Environment
-
-## Start All Services
-
-```bash
-docker compose up -d
-```
-
-This starts:
-
-* PostgreSQL
-* Airflow initialization service
-* Airflow webserver
-* Airflow scheduler
-
----
-
-## Verify Running Containers
-
-```bash
-docker ps -a
-```
-
-Expected containers:
-
-* airflow-postgres
-* airflow-init
-* airflow-webserver
-* airflow-scheduler
+* Virtual environment creation
+* Dependency installation
+* Docker validation
+* Airflow container startup
+* Container status verification
 
 ---
 
@@ -333,7 +285,6 @@ This repository follows a protected branch workflow.
 | --------- | ---------------------------- |
 | main      | Stable production-ready code |
 | dev       | Active development           |
-| feature/* | Feature development          |
 
 ## Main Branch Protection
 
